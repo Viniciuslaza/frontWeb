@@ -6,6 +6,44 @@ aButtonTop.className = "link-top";
 aButtonTop.setAttribute("href", "#");
 body.appendChild(aButtonTop);
 
+const switchButtonTop = document.createElement("div");
+switchButtonTop.className = "theme-switch-wrapper";
+body.appendChild(switchButtonTop);
+
+const switchLabel = document.createElement("label");
+switchLabel.className = "theme-switch";
+switchLabel.setAttribute("for", "checkbox");
+switchButtonTop.appendChild(switchLabel);
+
+const switchInput = document.createElement("input");
+switchInput.setAttribute("type", "checkbox");
+switchInput.setAttribute("id", "checkbox");
+switchLabel.appendChild(switchInput);
+
+const switchDovToggler = document.createElement("div");
+switchDovToggler.className = "slider round";
+switchLabel.appendChild(switchDovToggler);
+
+const switchEm = document.createElement("em");
+switchEm.innerHTML = "Dark Mode!";
+switchEm.className = "em";
+switchButtonTop.appendChild(switchEm);
+
+// Switch change
+const toggleSwitch = document.querySelector(
+  '.theme-switch input[type="checkbox"]'
+);
+
+function switchTheme(e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+}
+
+toggleSwitch.addEventListener("change", switchTheme, false);
+
 const hero_area = document.createElement("div");
 hero_area.className = "hero_area";
 body.appendChild(hero_area);
@@ -104,6 +142,7 @@ liNavBar4.appendChild(aLi4);
 firstPageSection();
 secondPageSection();
 thirdPageSection();
+fourPageSection();
 
 // First Page Section /////////////////////////////////////////////////
 function firstPageSection() {
@@ -176,6 +215,7 @@ function secondPageSection() {
 
   const h2TitleTwo = document.createElement("h2");
   divHeadingTitleTwo.appendChild(h2TitleTwo);
+  h2TitleTwo.className = "h2-title";
   h2TitleTwo.innerHTML = "Algumas Equipes";
 
   const divFiltersTwo = document.createElement("div");
@@ -431,6 +471,7 @@ function thirdPageSection() {
   divContainerThird.appendChild(divHeadingThird);
 
   const h2Third = document.createElement("h2");
+  h2Third.className = "h2-title";
   h2Third.innerHTML = "Oque os pilotos estão comentando?";
   divHeadingThird.appendChild(h2Third);
 
@@ -584,4 +625,78 @@ function thirdPageSection() {
   Img4Third.setAttribute("src", "images/client4.jpg");
   Img4Third.className = "box-img";
   divImg4Third.appendChild(Img4Third);
+}
+// Four ////////////////////////////////////////////////////////////////
+function fourPageSection() {
+  const sectionFour = document.createElement("section");
+  sectionFour.className = "book_section layout_padding";
+  body.appendChild(sectionFour);
+
+  const divContainerFour = document.createElement("div");
+  divContainerFour.className = "container";
+  sectionFour.appendChild(divContainerFour);
+
+  const divHeadingContainerFour = document.createElement("div");
+  divHeadingContainerFour.className = "heading_container";
+  divContainerFour.appendChild(divHeadingContainerFour);
+
+  const h2TitleFour = document.createElement("h2");
+  h2TitleFour.className = "h2-title";
+  h2TitleFour.innerHTML = "Deseja receber email do nosso site?";
+  divHeadingContainerFour.appendChild(h2TitleFour);
+
+  const divRowFour = document.createElement("div");
+  divRowFour.className = "row";
+  divContainerFour.appendChild(divRowFour);
+
+  const divColFour = document.createElement("div");
+  divColFour.className = "col-md-6";
+  divRowFour.appendChild(divColFour);
+
+  const divFormContainerFour = document.createElement("div");
+  divFormContainerFour.className = "form_container";
+  divColFour.appendChild(divFormContainerFour);
+
+  const formFour = document.createElement("form");
+  formFour.setAttribute("action", "");
+  divFormContainerFour.appendChild(formFour);
+
+  const div1Four = document.createElement("div");
+  formFour.appendChild(div1Four);
+
+  const inputNameFour = document.createElement("input");
+  inputNameFour.setAttribute("type", "text");
+  inputNameFour.setAttribute("name", "formEmail");
+  inputNameFour.className = "form-control";
+  inputNameFour.setAttribute("placeholder", "Seu Nome");
+  div1Four.appendChild(inputNameFour);
+
+  const div2Four = document.createElement("div");
+  formFour.appendChild(div2Four);
+
+  const inputTelefoneFour = document.createElement("input");
+  inputTelefoneFour.setAttribute("type", "text");
+  inputTelefoneFour.setAttribute("name", "formEmail");
+  inputTelefoneFour.className = "form-control";
+  inputTelefoneFour.setAttribute("placeholder", "Telefone");
+  div2Four.appendChild(inputTelefoneFour);
+
+  const div3Four = document.createElement("div");
+  formFour.appendChild(div3Four);
+
+  const inputEmailFour = document.createElement("input");
+  inputEmailFour.setAttribute("type", "email");
+  inputEmailFour.setAttribute("name", "formEmail");
+  inputEmailFour.className = "form-control";
+  inputEmailFour.setAttribute("placeholder", "Email");
+  div3Four.appendChild(inputEmailFour);
+
+  const divButtonFour = document.createElement("div");
+  divButtonFour.setAttribute("id", "buttonDiv");
+  divButtonFour.className = "btn_box";
+  formFour.appendChild(divButtonFour);
+
+  const buttonFour = document.createElement("button");
+  buttonFour.innerHTML = "Enviar";
+  divButtonFour.appendChild(buttonFour);
 }
