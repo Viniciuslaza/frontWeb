@@ -115,6 +115,7 @@ ulNavBar.appendChild(liNavBar2);
 const aLi2 = document.createElement("a");
 aLi2.className = "nav-link";
 aLi2.innerHTML = "Equipes";
+aLi2.setAttribute("id", "navEquipes");
 aLi2.setAttribute("href", "#equipes");
 liNavBar2.appendChild(aLi2);
 
@@ -126,6 +127,7 @@ ulNavBar.appendChild(liNavBar3);
 const aLi3 = document.createElement("a");
 aLi3.className = "nav-link";
 aLi3.innerHTML = "About";
+aLi3.setAttribute("id", "navAbout");
 aLi3.setAttribute("href", "#about");
 liNavBar3.appendChild(aLi3);
 
@@ -137,8 +139,56 @@ ulNavBar.appendChild(liNavBar4);
 const aLi4 = document.createElement("a");
 aLi4.className = "nav-link";
 aLi4.innerHTML = "News";
+aLi4.setAttribute("id", "navNews");
 aLi4.setAttribute("href", "#news");
 liNavBar4.appendChild(aLi4);
+
+var equipesHide = document.querySelector("#navEquipes");
+var aboutHide = document.querySelector("#navAbout");
+var newsHide = document.querySelector("#navNews");
+
+equipesHide.addEventListener("click", function () {
+  var sectionNews = document.querySelector("#news");
+  var sectionAbout = document.querySelector("#about");
+  var sectionEquipes = document.querySelector("#equipes");
+
+  if (sectionEquipes.style.display === "none") {
+    sectionEquipes.style.display = "block";
+    sectionAbout.style.display = "none";
+    sectionNews.style.display = "none";
+  } else {
+    sectionEquipes.style.display = "none";
+  }
+});
+
+aboutHide.addEventListener("click", function () {
+  var sectionNews = document.querySelector("#news");
+  var sectionAbout = document.querySelector("#about");
+  var sectionEquipes = document.querySelector("#equipes");
+
+  if (sectionAbout.style.display === "none") {
+    sectionAbout.style.display = "block";
+    sectionEquipes.style.display = "none";
+    sectionNews.style.display = "none";
+  } else {
+    sectionAbout.style.display = "none";
+  }
+});
+
+newsHide.addEventListener("click", function () {
+  var sectionNews = document.querySelector("#news");
+  var sectionAbout = document.querySelector("#about");
+  var sectionEquipes = document.querySelector("#equipes");
+
+  if (sectionNews.style.display === "none") {
+    sectionNews.style.display = "block";
+    sectionAbout.style.display = "none";
+    sectionEquipes.style.display = "none";
+  } else {
+    sectionNews.style.display = "none";
+  }
+});
+
 firstPageSection();
 secondPageSection();
 thirdPageSection();
@@ -201,6 +251,7 @@ function firstPageSection() {
 // Second Page Section /////////////////////////////////////////////////
 function secondPageSection() {
   const sectionTwo = document.createElement("section");
+  sectionTwo.setAttribute("style", "display: none;");
   sectionTwo.setAttribute("id", "equipes");
   sectionTwo.className = "equipes_section layout_padding-bottom";
   body.appendChild(sectionTwo);
@@ -457,7 +508,8 @@ function secondPageSection() {
 // Third ////////////////////////////////////////////////////////////////
 function thirdPageSection() {
   const sectionThird = document.createElement("section");
-  sectionThird.setAttribute("id", "news");
+  sectionThird.setAttribute("id", "about");
+  sectionThird.setAttribute("style", "display: none;");
   sectionThird.className = "client_section layout_padding-bottom";
   body.appendChild(sectionThird);
 
@@ -629,6 +681,8 @@ function thirdPageSection() {
 // Four ////////////////////////////////////////////////////////////////
 function fourPageSection() {
   const sectionFour = document.createElement("section");
+  sectionFour.setAttribute("id", "news");
+  sectionFour.setAttribute("style", "display: none;");
   sectionFour.className = "book_section layout_padding";
   body.appendChild(sectionFour);
 
