@@ -156,8 +156,6 @@ equipesHide.addEventListener("click", function () {
     sectionEquipes.style.display = "block";
     sectionAbout.style.display = "none";
     sectionNews.style.display = "none";
-  } else {
-    sectionEquipes.style.display = "none";
   }
 });
 
@@ -170,9 +168,7 @@ aboutHide.addEventListener("click", function () {
     sectionAbout.style.display = "block";
     sectionEquipes.style.display = "none";
     sectionNews.style.display = "none";
-  } else {
-    sectionAbout.style.display = "none";
-  }
+  } 
 });
 
 newsHide.addEventListener("click", function () {
@@ -184,8 +180,6 @@ newsHide.addEventListener("click", function () {
     sectionNews.style.display = "block";
     sectionAbout.style.display = "none";
     sectionEquipes.style.display = "none";
-  } else {
-    sectionNews.style.display = "none";
   }
 });
 
