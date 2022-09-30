@@ -143,19 +143,34 @@ aLi4.setAttribute("id", "navNews");
 aLi4.setAttribute("href", "#news");
 liNavBar4.appendChild(aLi4);
 
+// Five
+const liNavBar5 = document.createElement("li");
+liNavBar5.className = "nav-item";
+ulNavBar.appendChild(liNavBar5);
+
+const aLi5 = document.createElement("a");
+aLi5.className = "nav-link";
+aLi5.innerHTML = "Ao vivo";
+aLi5.setAttribute("id", "navLive");
+aLi5.setAttribute("href", "#live");
+liNavBar5.appendChild(aLi5);
+
 var equipesHide = document.querySelector("#navEquipes");
 var aboutHide = document.querySelector("#navAbout");
 var newsHide = document.querySelector("#navNews");
+var liveHide = document.querySelector("#navLive");
 
 equipesHide.addEventListener("click", function () {
   var sectionNews = document.querySelector("#news");
   var sectionAbout = document.querySelector("#about");
   var sectionEquipes = document.querySelector("#equipes");
+  var sectionLive = document.querySelector("#live");
 
   if (sectionEquipes.style.display === "none") {
     sectionEquipes.style.display = "block";
     sectionAbout.style.display = "none";
     sectionNews.style.display = "none";
+    sectionLive.style.display = "none";
   }
 });
 
@@ -163,23 +178,41 @@ aboutHide.addEventListener("click", function () {
   var sectionNews = document.querySelector("#news");
   var sectionAbout = document.querySelector("#about");
   var sectionEquipes = document.querySelector("#equipes");
+  var sectionLive = document.querySelector("#live");
 
   if (sectionAbout.style.display === "none") {
     sectionAbout.style.display = "block";
     sectionEquipes.style.display = "none";
     sectionNews.style.display = "none";
-  } 
+    sectionLive.style.display = "none";
+  }
 });
 
 newsHide.addEventListener("click", function () {
   var sectionNews = document.querySelector("#news");
   var sectionAbout = document.querySelector("#about");
   var sectionEquipes = document.querySelector("#equipes");
+  var sectionLive = document.querySelector("#live");
 
   if (sectionNews.style.display === "none") {
     sectionNews.style.display = "block";
     sectionAbout.style.display = "none";
     sectionEquipes.style.display = "none";
+    sectionLive.style.display = "none";
+  }
+});
+
+liveHide.addEventListener("click", function () {
+  var sectionNews = document.querySelector("#news");
+  var sectionAbout = document.querySelector("#about");
+  var sectionEquipes = document.querySelector("#equipes");
+  var sectionLive = document.querySelector("#live");
+
+  if (sectionLive.style.display === "none") {
+    sectionLive.style.display = "block";
+    sectionAbout.style.display = "none";
+    sectionEquipes.style.display = "none";
+    sectionNews.style.display = "none";
   }
 });
 
@@ -187,6 +220,7 @@ firstPageSection();
 secondPageSection();
 thirdPageSection();
 fourPageSection();
+iframe();
 
 // First Page Section /////////////////////////////////////////////////
 function firstPageSection() {
@@ -306,7 +340,6 @@ function secondPageSection() {
   const divOptionsTwo = document.createElement("div");
   divOptionsTwo.className = "options";
   divDetailBoxTwo.appendChild(divOptionsTwo);
-  divOptionsTwo.innerHTML = "Clique aqui para mais";
 
   // Second
   const divCol2two = document.createElement("div");
@@ -344,7 +377,6 @@ function secondPageSection() {
   const divOptions2Two = document.createElement("div");
   divOptions2Two.className = "options";
   divDetailBox2Two.appendChild(divOptions2Two);
-  divOptions2Two.innerHTML = "Clique aqui para mais";
 
   // Third
   const divCol3two = document.createElement("div");
@@ -382,7 +414,6 @@ function secondPageSection() {
   const divOptions3Two = document.createElement("div");
   divOptions3Two.className = "options";
   divDetailBox3Two.appendChild(divOptions3Two);
-  divOptions3Two.innerHTML = "Clique aqui para mais";
 
   // Four
   const divCol4two = document.createElement("div");
@@ -420,7 +451,6 @@ function secondPageSection() {
   const divOptions4Two = document.createElement("div");
   divOptions4Two.className = "options";
   divDetailBox4Two.appendChild(divOptions4Two);
-  divOptions4Two.innerHTML = "Clique aqui para mais";
 
   // Five
   const divCol5two = document.createElement("div");
@@ -458,7 +488,6 @@ function secondPageSection() {
   const divOptions5Two = document.createElement("div");
   divOptions5Two.className = "options";
   divDetailBox5Two.appendChild(divOptions5Two);
-  divOptions5Two.innerHTML = "Clique aqui para mais";
 
   // Six
   const divCol6two = document.createElement("div");
@@ -496,7 +525,6 @@ function secondPageSection() {
   const divOptions6Two = document.createElement("div");
   divOptions6Two.className = "options";
   divDetailBox6Two.appendChild(divOptions6Two);
-  divOptions6Two.innerHTML = "Clique aqui para mais";
 }
 
 // Third ////////////////////////////////////////////////////////////////
@@ -747,4 +775,18 @@ function fourPageSection() {
   const buttonFour = document.createElement("button");
   buttonFour.innerHTML = "Enviar";
   divButtonFour.appendChild(buttonFour);
+}
+function iframe() {
+  const iframe = document.createElement("iframe");
+  iframe.setAttribute("src", "//f1livegp.me/f1/live.php");
+  iframe.setAttribute("style", "display: none;");
+  iframe.setAttribute("id", "live");
+  iframe.setAttribute("name", "frame");
+  iframe.setAttribute("scrolling", "no");
+  iframe.setAttribute("frameborder", "no");
+  iframe.setAttribute("allow", "fullscreen");
+  iframe.setAttribute("align", "center");
+  iframe.setAttribute("height", "450px");
+  iframe.setAttribute("width", "100%");
+  body.appendChild(iframe);
 }
